@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hero background word style - Light theme */
+.hero-bg-text {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: clamp(72px, 12vw, 180px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 74.18%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.3;
+}
+
+/* Modern animations */
+@keyframes heroIn {
+  0% { opacity: 0; transform: translate(40px, 40px) scale(0.86); }
+  60% { opacity: 1; transform: translate(0, 0) scale(1.02); }
+  100% { opacity: 1; transform: translate(0, 0) scale(1); }
+}
+
+@keyframes infoUp {
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bgFade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Modern gradient backgrounds */
+.gradient-bg-1 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-2 {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-bg-3 {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.gradient-bg-4 {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Modern glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Modern card hover effects */
+.modern-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.modern-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated elements */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=Space+Grotesk:wght@400;600;700&display=swap");
+
+:root {
+  --bg: #ffffff;
+  --panel: rgba(0,0,0,0.04);
+  --ring: rgba(0,0,0,0.1);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #1f2937;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/***** Typography *****/
+.font-display { font-family: "Space Grotesk", Inter, system-ui, sans-serif; }
+.eyebrow { font-size: clamp(16px, 2.6vw, 24px); font-weight: 500; text-transform: uppercase; letter-spacing: 0; }
+.eyebrow-gradient { background: linear-gradient(90deg, rgba(16,185,129,1) 0%, rgba(59,130,246,1) 100%); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+.h1 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(48px, 8vw, 96px); }
+.h2 { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; font-size: clamp(36px, 6vw, 64px); }
+.h3 { font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; font-size: clamp(28px, 4vw, 40px); }
+.h4 { font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; font-size: clamp(20px, 3vw, 24px); }
+
+/***** Buttons & Inputs *****/
+.btn { @apply inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl; }
+.btn-sm { @apply px-4 py-2 text-sm rounded-full bg-white/90 text-gray-900 hover:bg-white hover:shadow-lg ring-1 ring-gray-200 transition-all duration-300 transform hover:scale-105; }
+.btn-outline { @apply px-6 py-3 rounded-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105; }
+.input { @apply rounded-xl px-4 py-3 bg-gray-50 text-gray-900 placeholder-gray-400 outline-none ring-1 ring-gray-200 focus:ring-2 focus:ring-blue-500 transition-all duration-300; }
+.nav-link { @apply text-gray-600 hover:text-gray-900 transition-all duration-300 relative; }
+
+/* Modern navigation hover effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/***** Cards *****/
+.card { @apply rounded-2xl p-4 md:p-6 bg-white ring-1 ring-gray-200 shadow-sm; }
+.card-sm { @apply rounded-xl p-3 bg-white ring-1 ring-gray-200; }
+.hover-lift { transform: translateY(0); transition: transform .4s ease, box-shadow .4s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.1); }
+
+/***** Hero *****/
+.stacked-heading { position: relative; }
+.stacked-heading .stack-line { font-family: "Space Grotesk", Inter, sans-serif; font-weight: 900; letter-spacing: -0.02em; line-height: .9; font-size: clamp(56px, 10vw, 108px); color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,.07); opacity: .8; }
+.stacked-heading .stack-line:nth-child(1) { transform: translateY(-16px); }
+.stacked-heading .stack-line:nth-child(2) { transform: translateY(-12px); }
+.stacked-heading .stack-line:nth-child(3) { transform: translateY(-8px); }
+.stacked-heading .stack-line:nth-child(4) { transform: translateY(-4px); }
+.stacked-heading .stack-line:nth-child(5) { transform: translateY(0px); }
+.stacked-heading .stack-line:nth-child(6) { transform: translateY(4px); }
+
+.hero-media { filter: drop-shadow(0 40px 120px rgba(0,0,0,.1)); }
+
+/***** Animations *****/
+.fade-up { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.fade-up.inview { opacity: 1; transform: translateY(0); }
+
+/* Specs row reveal animation */
+.spec-row { transition: opacity .6s ease-out, transform .6s ease-out; }
+.specs-inview .spec-row { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* Generic reveal utilities */
+.reveal { opacity: 0; }
+.reveal-left { opacity: 0; transform: translateX(-24px); transition: opacity .6s ease-out, transform .6s ease-out; }
+.reveal-up { opacity: 0; transform: translateY(24px); transition: opacity .6s ease-out, transform .6s ease-out; }
+.reveal-left.inview { opacity: 1; transform: translateX(0); }
+.reveal-up.inview { opacity: 1; transform: translateY(0); }
+.reveal.in { opacity: 1; transform: translate(0,0); }
+
+/***** Carousel *****/
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.carousel-btn { @apply absolute top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-900 rounded-full p-2 ring-1 ring-gray-200 shadow-sm; }
+
+/***** Surfaces *****/
+.gradient-panel { background: radial-gradient(1200px 400px at 80% 80%, rgba(16,185,129,.08), transparent 60%), radial-gradient(800px 300px at 20% 20%, rgba(59,130,246,.10), transparent 60%), rgba(255,255,255,.8); }
+.section-wrapper { position: relative; }
+
+/* Smooth scroll for anchor links with offset for sticky navbar */
+html { 
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Utility ring style fix on light bg */
+* { outline-color: rgba(0,0,0,.2); }
